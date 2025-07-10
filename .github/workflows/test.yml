@@ -1,4 +1,3 @@
-yaml
 name: Animal Farm NodeJS CI
 on:
   push:
