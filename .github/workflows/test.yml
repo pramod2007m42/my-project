@@ -2,7 +2,7 @@ name: Animal Farm NodeJS CI
 on:
   push:
     branches:
-      - main
+      - khalids226-patch-1
   pull_request:
     branches:
       - main
