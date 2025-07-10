@@ -21,8 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn
-        working-directory: app  # ✅ adjust this if your code is under a subdirectory
 
       - name: Run tests
         run: yarn test
-        working-directory: app  # ✅
