@@ -6,7 +6,7 @@
 
     docker build -t java-app .
     
-##### push image to repo 
+##### rest are automated in cicd yaml
 
-    docker tag java-app demo-app:java-1.0
+    check the tags and name you will be building and pushing to.
     
