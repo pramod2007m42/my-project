@@ -1,18 +1,28 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
-
+# name - optional
 name: Java CI with Gradle
-
+# Events (required)
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'CI'
+        required: true
+        default: 'dev'
+#  push:
+#    branches:
+#      - master
+#      - sanchitavrm-patch-1
+#  pull_request:
+#    branches: [ master ]
 
+# Include set of actions
 jobs:
   build-java:
 
     runs-on: ubuntu-latest
+    environment: dev   # this line enables access to the secrets
     
     steps:
     - uses: actions/checkout@v2
@@ -26,13 +36,19 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        ./gradlew build
+        ls build/libs/
 
+
+# marketplace actions
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: nanajanashia/demo-app
+        image: sanchitavrm/demo-app
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+
+  
          
