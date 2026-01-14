@@ -48,5 +48,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/ci-test:${{ steps.timestamp.outputs.timestamp }}
+            ${{ secrets.DOCKER_USERNAME }}/ci-test:${{ steps.version.outputs.timestamp }}
            
