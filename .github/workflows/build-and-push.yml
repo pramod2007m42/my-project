@@ -60,8 +60,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/my-app:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/my-app:buildcache,mode=max
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ci-test:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/ci-test:buildcache,mode=max
       
       - name: Image digest
         run: echo ${{ steps.meta.outputs.tags }}
