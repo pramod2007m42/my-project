@@ -47,7 +47,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ci-test:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ci-test
       
       - name: Image pushed successfully
-        run: echo "Docker image pushed as ${{ secrets.DOCKER_USERNAME }}/ci-test:latest"
+        run: echo "Docker image pushed as ${{ secrets.DOCKER_USERNAME }}/ci-test"
