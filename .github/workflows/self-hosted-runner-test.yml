@@ -1,0 +1,15 @@
+name: Manual Trigger on Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-sample-script:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run sample script
+        run: |
+          echo "This is a sample script running on a self-hosted runner." >> output.txt
