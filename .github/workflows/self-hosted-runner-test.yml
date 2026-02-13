@@ -12,4 +12,5 @@ jobs:
 
       - name: Run sample script
         run: |
+          sleep 10
           echo "This is a sample script running on a self-hosted runner." >> output.txt
